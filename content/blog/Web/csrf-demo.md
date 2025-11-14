@@ -421,8 +421,8 @@ function ensureCsrfToken(req) {
 
 两种注入方式：
 
-- <input type="hidden" name="_csrf">：表单自动带上
-- <meta name="csrf-token">：前端 JS 可以从 DOM 里读出来，用在 AJAX 请求里
+- `<input type="hidden" name="_csrf">`：表单自动带上
+- `<meta name="csrf-token">`：前端 JS 可以从 DOM 里读出来，用在 AJAX 请求里
 
 **从该页面提交的请求携带这个token**
 
