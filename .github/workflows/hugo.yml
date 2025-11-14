@@ -21,11 +21,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          submodules: recursive  # 自动拉取主题子模块
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.147.4"
+          hugo-version: "latest"
           extended: true
 
       - name: Build
