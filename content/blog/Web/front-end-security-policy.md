@@ -18,7 +18,7 @@ Same Origin Policy 同源策略
 
 **DOM** （页面内容）：包括DOM结构、文本内容、输入框的值、Cookie、LocalStorage、SessionStorage、IndexedDB等
 
-![image.png](%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5/image.png)
+![image.png](front-end-security-policy/image.png)
 
 现代浏览器通常将使用 `file:///` 模式加载的文件的来源视为*不透明的来源*。这意味着，假如一个文件包括来自同一文件夹的其他文件，它们不会被认为来自同一来源，并可能引发 [CORS](https://developer.mozilla.org/zh-CN/docs/Glossary/CORS) 错误。
 
