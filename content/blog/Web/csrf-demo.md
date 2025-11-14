@@ -146,9 +146,9 @@ function cb(data) {
 
 **JSONP = JSON with Padding**
 
-它是一种「利用 <script> 标签天然允许跨域加载」的**跨域读取数据的黑科技（旧技术）**。
+它是一种「利用 `<script>` 标签天然允许跨域加载」的**跨域读取数据的黑科技（旧技术）**。
 
-> JSONP 是服务端返回一段 JavaScript，而不是 JSON，让前端通过 <script> 标签执行这段 JS，并在里面主动把数据传出来。
+> JSONP 是服务端返回一段 JavaScript，而不是 JSON，让前端通过 `<script>` 标签执行这段 JS，并在里面主动把数据传出来。
 > 
 
 它是 **绕过同源策略读取跨域响应内容** 的最早技术之一。
@@ -174,7 +174,7 @@ app.get('/jsonp', requireAuth, (req, res) => {
 });
 ```
 
-### <script src=xxx>
+### `<script src=xxx>`
 
 尽管不能读响应，但是还是可以发送get请求的
 
@@ -188,7 +188,7 @@ app.get('/jsonp', requireAuth, (req, res) => {
 
 ![image.png](CSRF/image%205.png)
 
-### <iframe> + form提交
+### `<iframe>` + form提交
 
 form+cookie是典型的手法
 
@@ -223,7 +223,7 @@ window.parent.postMessage("data", "*");
 window.addEventListener("message", e => console.log(e.data));
 ```
 
-### <link>(css)
+### `<link>(css)`
 
 ```jsx
 <link rel="stylesheet" href="https://localhost:3000/dashboard">
@@ -232,7 +232,7 @@ window.addEventListener("message", e => console.log(e.data));
 可以发送get请求，带凭据，跟img一样
 SOP 限制：如果是样式能被浏览器使用，但 JS 不能读 raw text。
 
-**<video>/ <audio>**
+**`<video>/ <audio>`**
 
 ```jsx
 <video src="https://localhost:3000/dashboard"></video>
@@ -426,7 +426,7 @@ function ensureCsrfToken(req) {
 
 **从该页面提交的请求携带这个token**
 
-前端脚本从 <meta> 里把 token 读出来，加在 header 或 body 里：
+前端脚本从 `<meta>` 里把 token 读出来，加在 header 或 body 里：
 
 ```jsx
 <meta name="csrf-token" content="...">
