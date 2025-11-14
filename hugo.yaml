@@ -1,0 +1,47 @@
+baseURL: "https://ak4izz.github.io/"
+languageCode: "zh-cn"
+title: "Ak4izZ's Blog"
+module:
+  imports:
+    - path: hextra
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: assets/avator.png
+      dark: assets/avator.png
+      link: /
+      width: 40
+      height: 20
+  highlight:
+    copy:
+      enable: true
+      # hover | always
+      display: hover
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+menu:
+  main:
+    - name: Blog
+      pageRef: /blog
+      weight: 1
+    - name: About
+      pageRef: /about
+      weight: 2
+    - name: Search
+      weight: 3
+      params:
+        type: search
+    - name: GitHub
+      weight: 4
+      url: "https://github.com/imfing/hextra"
+      params:
+        icon: github
+
+    
