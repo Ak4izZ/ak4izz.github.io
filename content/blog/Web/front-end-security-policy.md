@@ -213,14 +213,14 @@ CSRF的本质：浏览器会在跨站请求时自动带上 Cookie/Session 等认
 如何防范？
 
 - 使用可信的 CDN、签名资源（Subresource Integrity, SRI）。即域名白名单
-- 高风险接口不要用 GET（避免 <img> 被利用）。
+- 高风险接口不要用 GET（避免 `<img>` 被利用）。
 - 页面响应头加 X-Frame-Options 或 Content-Security-Policy: frame-ancestors 防点击劫持。
 
 ## **JSONP（旧方法）**
 
 **SOP 限制：**
 
-- 本质是 <script> 加载 JS，不受 CORS 检查。
+- 本质是 `<script>` 加载 JS，不受 CORS 检查。
 - 返回的内容必须是合法 JS（通常是函数调用）。
 
 **安全隐患：**
@@ -245,8 +245,8 @@ CSRF的本质：浏览器会在跨站请求时自动带上 Cookie/Session 等认
 
 **弃用 JSONP 的做法：**
 
-1. 前端：不再通过 <script src="...&callback=fn"> 请求数据。
-2. 服务端：改为返回 application/json，并正确设置 CORS 头：
+1. 前端：不再通过 `<script src="...&callback=fn">` 请求数据。
+2. 服务端：改为返回 `application/json`，并正确设置 CORS 头：
 
 ## **postMessage（跨源通信）**
 
@@ -391,7 +391,7 @@ Cross-Origin-Embedder-Policy: require-corp | credentialless | unsafe-none
 
 为弥补这些“开窗”带来的风险，又有了一组补强策略：
 
-- **CORP**：资源端声明“谁可以嵌我”，防止别人用 <img>/<iframe> 等方式绕过 CORS 偷用资源。
+- **CORP**：资源端声明“谁可以嵌我”，防止别人用 `<img>/<iframe>` 等方式绕过 CORS 偷用资源。
 - **CSP**：页面端声明“我可以加载谁”，通过白名单减少 XSS、恶意外链和点击劫持。
 - **COOP / COEP**：把顶级页面与跨源窗口、子资源隔离到不同进程，只允许满足 CORS/CORP 条件的安全资源被嵌入，为高安全、高性能场景（如 SharedArrayBuffer）提供基础。
 
