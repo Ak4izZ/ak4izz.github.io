@@ -133,7 +133,7 @@ CORS策略全部放开时，不带cookie，被拦截，跳转到登录叶面
 
 ![image.png](CSRF/image%204.png)
 
-### JSONP <script src=”xxx”>
+### `JSONP <script src=”xxx”>`
 
 ```jsx
 <script src="https://a.com/jsonp?callback=cb"></script>
